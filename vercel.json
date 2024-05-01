@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "scripts": {
-    "start": "node server.js"
-  }
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "/server.js"
+    }
+  ]
   
 }
