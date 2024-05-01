@@ -1,15 +1,17 @@
 extends layout
 
 block content
-    h1 Share a New Video
+    h1 Share Your Favorite Video Short
     if error
         p.error= error
-    form(method='POST', action='/video/new_video')
+    form(method="POST", action="newVideo")
         div
-            label(for='title') Title:
-            input(type='text', name='title', id='title', required=true)
+            label(for="title") Video Title:
+            input(type="text", name="title", id="title", required=true)
+            small Enter the title of your video.
         div
-            label(for='url') Video URL:
-            input(type='text', name='url', id='url', required=true)
+            label(for="url") Video URL:
+            input(type="text", name="url", id="url", required=true)
+            small Enter the full URL to the YouTube video you wish to share.
         div
-            button(type='submit') Add Video
+            button(type="submit") Share Video
