@@ -1,12 +1,11 @@
 {
   "name": "project-4-build-a-simple-back-end-web-application",
-  "version": "0.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "node": "20.11.1",
+    "node": "22.0.0",
     "cookie-parser": "^1.4.6",
     "debug": "~4.3.4",
     "dotenv": "^16.4.5",
