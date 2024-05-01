@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Share a New Video
+    if error
+        p.error= error
+    form(method='POST', action='/video/new_video')
+        div
+            label(for='title') Title:
+            input(type='text', name='title', id='title', required=true)
+        div
+            label(for='url') Video URL:
+            input(type='text', name='url', id='url', required=true)
+        div
+            button(type='submit') Add Video
