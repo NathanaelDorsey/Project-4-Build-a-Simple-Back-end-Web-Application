@@ -33,7 +33,7 @@ app.use(session({
 // Route usage
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/video', videoRouter); // Video routes
+app.use('/video', videoRouter);
 
 
 app.use(function(req, res, next) {
