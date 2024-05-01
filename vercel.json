@@ -1,4 +1,7 @@
 {
-  "version": 2
+  "version": 2,
+  "scripts": {
+    "start": "node server.js"
+  },
   
 }
