@@ -2,8 +2,9 @@
   "name": "project-4-build-a-simple-back-end-web-application",
   "version": "0.0.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
-    "start": "node public/javascripts/server.js"
+    "start": "node server.js"
   },
   "engines": {
     "node": "20.x"
