@@ -7,9 +7,9 @@ const logger = require('morgan');
 const createError = require('http-errors');
 
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/authRoutes');
-const videoRouter = require('./routes/videoRoutes');
+const indexRouter = require('../../routes');
+const usersRouter = require('../../routes/authRoutes');
+const videoRouter = require('../../routes/videoRoutes');
 const session = require("express-session");
 
 const app = express();
