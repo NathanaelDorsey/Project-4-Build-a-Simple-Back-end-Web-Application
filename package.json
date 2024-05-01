@@ -10,6 +10,7 @@
     "node": "20.x"
   },
   "dependencies": {
+    "node": "22.0.0",
     "cookie-parser": "^1.4.6",
     "debug": "~2.6.9",
     "dotenv": "^16.4.5",
