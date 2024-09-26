@@ -68,11 +68,3 @@ exports.displayDashboard = (req, res) => {
 
     res.render('dashboard', { videos: filteredVideos });
 };
-exports.logoutUser = (req, res) => {
-    req.session.destroy((err) => {
-        if (err) {
-            return res.redirect('/video/dashboard/all');
-        }
-        res.redirect('/users/login');
-    });
-};
