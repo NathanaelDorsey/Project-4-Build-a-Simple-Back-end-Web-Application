@@ -11,4 +11,7 @@ router.post('/register', authController.registerUser);
 router.get('/login', authController.loginForm);
 router.post('/login', authController.loginUser);
 
+// Logout route
+router.post('/logout', videoController.logoutUser);
+
 module.exports = router;
