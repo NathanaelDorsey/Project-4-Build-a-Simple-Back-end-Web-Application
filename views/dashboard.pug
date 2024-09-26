@@ -2,11 +2,22 @@ extends layout
 
 block content
     h1 Video Dashboard
+
+    form(action='/users/logout', method='post')
+        button(type='submit').btn Logout
+
     a(href='/video/newVideo').btn Add New Video
+
     each video in videos
         .video
             h2= video.title
             p Uploaded by: #{video.uploader}
-            iframe(width='560', height='315', src=video.url, frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', allowfullscreen)
-                source(src=video.url type='video/mp4')
+            iframe(
+                width='560', 
+                height='315', 
+                src=video.url, 
+                frameborder='0', 
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture', 
+                allowfullscreen)
+                source(src=video.url, type='video/mp4')
                 | Your browser does not support the video tag.
