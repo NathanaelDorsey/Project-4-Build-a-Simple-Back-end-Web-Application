@@ -1,18 +1,16 @@
-const fs = require('fs');
-const path = require('path');
-const usersFilePath = path.join(__dirname, '..', 'data', 'users.json');
+// In-memory storage for users
+let usersData = [];
 
 // Utility function to read users data
 function readUsersData() {
-    const data = fs.readFileSync(usersFilePath);
-    return JSON.parse(data);
+    return usersData;
 }
 
 // Utility function to save users data
 function saveUsersData(users) {
-    const data = JSON.stringify(users, null, 4);
-    fs.writeFileSync(usersFilePath, data);
+    usersData = users;
 }
+
 exports.registerForm = (req, res) => {
     res.render('register');
 };
@@ -42,8 +40,6 @@ exports.registerUser = (req, res) => {
 
     res.redirect('/users/login');
 };
-
-const session = require('express-session');
 
 exports.loginUser = (req, res) => {
     const { email, password } = req.body;
