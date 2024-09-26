@@ -1,26 +1,16 @@
-const fs = require('fs');
-const path = require('path');
 const sanitizeHtml = require('sanitize-html');
 
-const videosFilePath = path.join(__dirname, '..', 'data', 'videos.json');
+// In-memory storage for videos
+let videoDatabase = [];
 
+// Utility function to read videos data
 function readVideosData() {
-    try {
-        const data = fs.readFileSync(videosFilePath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error("Failed to read videos data:", error);
-        return [];
-    }
+    return videoDatabase;
 }
 
+// Utility function to save videos data
 function saveVideosData(videos) {
-    try {
-        const data = JSON.stringify(videos, null, 4);
-        fs.writeFileSync(videosFilePath, data);
-    } catch (error) {
-        console.error("Failed to save videos data:", error);
-    }
+    videoDatabase = videos;
 }
 
 exports.newVideoForm = (req, res) => {
@@ -63,7 +53,6 @@ exports.addNewVideo = (req, res) => {
 
     res.redirect('/video/dashboard/all');
 };
-
 
 exports.displayDashboard = (req, res) => {
     if (!req.session.user) {
