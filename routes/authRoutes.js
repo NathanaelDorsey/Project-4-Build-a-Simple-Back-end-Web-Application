@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');
+const videoController = require('../controllers/videoController');
 
 // Registration routes
 router.get('/register', authController.registerForm);
